@@ -1,10 +1,11 @@
-let wordToGuess = prompt("Schrijf je woord");
-
+ let wordToGuess = prompt("Schrijf je woord");
+let running = true;
 
 const letters = wordToGuess.split('');
 console.log(letters);
 let letterGuessed = letters;
 let letterToGuess = prompt("Raad de letter");
+while(running){
 if (letters.includes(letterToGuess)) {
     console.log("Good job, proud of you");
     prompt("Guess the next letter");
@@ -17,3 +18,4 @@ if (letters.includes(letterToGuess)) {
     prompt("Guess another letter");
    
 } 
+}
