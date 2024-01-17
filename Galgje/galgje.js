@@ -31,5 +31,5 @@ while(running){
             letterRaden = prompt("raad een andere letter"); 
         }
      
-    }
+    } 
 }
