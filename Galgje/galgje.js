@@ -1,21 +1,35 @@
- let wordToGuess = prompt("Schrijf je woord");
-let running = true;
+let woord = prompt("schrijf je woord");
 
-const letters = wordToGuess.split('');
+const letters = woord.split("");
 console.log(letters);
-let letterGuessed = letters;
-let letterToGuess = prompt("Raad de letter");
-while(running){
-if (letters.includes(letterToGuess)) {
-    console.log("Good job, proud of you");
-    prompt("Guess the next letter");
-    for(let letter = 0; letter > letters.includes(letterToGuess).length; letter++){
-        console.log(letter);
-    }
+let running = true;
+let wrongs = 0;
+let letterGeraden = letters;
 
-}else{
-    console.log("try again (LOSER)");
-    prompt("Guess another letter");
-   
-} 
+let letterRaden = prompt("raad de letter");
+while(running){
+    if(letters.includes(letterRaden)){
+        console.log("Good Job, Proud of you ");
+        for(let i = 0; i > letters.includes(letterRaden).length; i++){
+            
+            
+        }
+        letterRaden = prompt("raad de volgende letter");
+
+        if(letters == woord){ 
+            console.log('je hebt gewonnen');
+            running = false;
+        }
+    //console.log("letter");
+    }else{
+        wrongs++;
+        if(wrongs == 5){
+            console.log('je hebt verloren');
+            running = false;
+        } else {
+            console.log("Try again (loser)");
+            letterRaden = prompt("raad een andere letter"); 
+        }
+     
+    }
 }
