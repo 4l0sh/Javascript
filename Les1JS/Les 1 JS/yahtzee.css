@@ -1,0 +1,63 @@
+
+
+html,body{
+    background-image: url(dice1.jpg);
+    z-index: -1;
+    background-size: 130%;
+    background-position: center;
+   
+  
+}
+.gridLayout{
+    display: grid;
+    grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    grid-auto-rows: 50px;
+}
+#title{
+    color: white;
+    grid-column: 1/21;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+#roll{
+    grid-column: 10;
+    grid-row: 3;
+}
+#hold{
+    grid-column: 11;
+    grid-row: 3;
+}
+
+#dice1{
+    color: white;
+    grid-column: 5;
+}
+#dice2{
+    color: white;
+    grid-column: 5;
+
+}
+#dice3{
+    color: white;
+    grid-column: 5;
+
+}
+#dice4{ 
+    color: white;
+    grid-column: 5;
+
+}
+#dice5{
+    color: white;
+    grid-column: 5;
+
+}
+
+#remainingTurns{
+    color: black;
+    font-size: 20px;
+}
+#counter{
+    color: black;
+}
