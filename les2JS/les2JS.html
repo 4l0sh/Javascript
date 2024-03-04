@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>les2</title>
+        
+    </head>
+    
+
+    <input onclick="add()" type="submit" value="Add person">
+
+        <input id="person" type="text" required placeholder="Type here ">
+    <br>
+    
+
+
+
+
+
+
+        <script>
+             let person = document.getElementById("person");
+
+function add() {
+    let img = document.createElement("img");
+    img.src = person.value + ".png";
+    document.body.appendChild(img);
+    console.log("added image of " + person.value);
+
+    img.onclick = function() {
+        console.log(person.value);
+    };
+}
+
+            let shrek = document.getElementById("person");
+            let imgShrek = document.createElement("img");
+            imgShrek.src="shrek.png";
+            if(person.value == "Shrek"){
+                document.body.appendChild(imgShrek);
+                console.log("Added  Image of Shrek");
+
+                imgShrek.onclick = function(){
+                    console.log("Shrek ");
+                }
+            }
+
+
+            let presoon = document.getElementById("person");
+            let imgdefault = document.createElement("img");
+            imgdefault.src="default.png";
+            if(person.value == ""){
+                document.body.appendChild(imgdefault);
+                console.log("Added  Image of default  Person");
+            }
+
+                imgShrek.onclick = function(){
+                    console.log("person ");
+                }
+            
+            
+
+            
+         
+
+
+
+        </script>
+
+
+
+
+
+</html>
