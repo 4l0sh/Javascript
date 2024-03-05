@@ -1,7 +1,3 @@
-const rollButton = document.getElementById("roll");
-const holdButton = document.getElementById("hold");
-
-
 
 let remainingTurns = 3;
 
