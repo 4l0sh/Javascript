@@ -1,118 +1,245 @@
 <!DOCTYPE html>
-<html >
+<html>
   <head>
-    <title> Yahtzee</title>
-    <link rel="stylesheet" href="yahtzee.css">
+    <title>Yahtzee</title>
+    <link rel="stylesheet" href="yahtzee.css" />
     <script src="yahtzee.js"></script>
+    <audio id="animationSound" src="Bruh - Sound Effect (HD).mp3"></audio>
   </head>
 
   <body>
     <div class="gridLayout">
-      <p id="title">Yahtzee!</p>
-    <button onclick="rollDice()" id="roll">Roll</button>
-    <button onClick="window.location.reload()">Change Player</button>
-    
-    
-    
-    <button onclick="holdDie(1,this)"id="dice1" class="dices">0</button>
-    <button onclick="holdDie(2,this)"id="dice2" class="dices">0</button>
-    <button onclick="holdDie(3,this)"id="dice3" class="dices">0</button>
-    <button onclick="holdDie(4,this)"id="dice4" class="dices">0</button>
-    <button onclick="holdDie(5,this)"id="dice5" class="dices">0</button>
+      <p id="title" onmouseover="playHoverSound()">Yahtzee!</p>
+      <button onclick="rollDice()" id="roll">Roll</button>
+      <button onClick="window.location.reload()">Change Player</button>
 
+      <button onclick="holdDie(1,this)" id="dice1" class="dices">0</button>
+      <button onclick="holdDie(2,this)" id="dice2" class="dices">0</button>
+      <button onclick="holdDie(3,this)" id="dice3" class="dices">0</button>
+      <button onclick="holdDie(4,this)" id="dice4" class="dices">0</button>
+      <button onclick="holdDie(5,this)" id="dice5" class="dices">0</button>
 
-    
-    <br><br>
-    <h2 id="totalText">Total</h2>
-    <h2 id="total"></h2>
-    <h2 id="yahtzee"></h2>
-    <h2 id="counter"> Total of rolls</h2>
-    <h2 id="remainingTurns">You have 3 rolls</h2>
-    
-
-   
-  
-    <table id="Table" bgcolor="grey">
-      <tr >
-        <th >  Part 1</th>
-        <th bgcolor="lightgrey">score</th>
-        <th bgcolor="lightgrey"> game 1 </th>
-        <th bgcolor="lightgrey"> game 2 </th>
-        <th bgcolor="lightgrey"> game 3 </th>
-        <th bgcolor="lightgrey"> game 4 </th>
-        <th bgcolor="lightgrey"> game 5 </th>
-        <th bgcolor="lightgrey"> game 6 </th>
-        
-      </tr>
-
-
+      <br /><br />
+      <h2 id="totalText">Total</h2>
+      <h2 id="total"></h2>
+      <h2 id="yahtzee"></h2>
+      <h2 id="counter">Total of rolls</h2>
+      <h2 id="remainingTurns">You have 3 rolls</h2>
       
-    
-  <tr>
-    <th bgcolor="white"> aces</th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
 
-  </tr>
-  
-    <tr>
-      <th bgcolor="white"> Two's</th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-  
-    </tr>
-    
-      <tr>
-        <th bgcolor="white"> Three's</th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-        <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-    
-      </tr>
-      
+      <table id="Table" bgcolor="grey">
         <tr>
-          <th bgcolor="white"> Fours</th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-          <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-      
+          <th>Part 1</th>
+          <th bgcolor="lightgrey">score</th>
+          <th bgcolor="lightgrey">game 1</th>
+          <th bgcolor="lightgrey">game 2</th>
+          <th bgcolor="lightgrey">game 3</th>
+          <th bgcolor="lightgrey">game 4</th>
+          
         </tr>
-       
-          <tr>
-            <th bgcolor="white"> Fives</th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
-            <th bgcolor="lightgrey"> <input type="number" name="score" id="scoreAces" width="20px"> </th>
+
+        <tr>
+          <th bgcolor="white">aces</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+         
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Two's</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Three's</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
         
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Fours</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Fives</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+
+
+        </tr>
+        <th bgcolor="white">Six's</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+      </table>
+
+
+       <div class="player-2"> 
+        <table>
+          <tr>
+            <th>Player 1</th>
+            <th>game 1</th>
+            <th>game 2</th>
+            <th>game 3</th>
+            <th>game 4</th>
           </tr>
-          </table> 
-
-
-
+          <tr>
+            <td>one's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>two's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>three's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>four's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>five's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>six's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+        </table>
         </div>
 
-  
+        <div class="container">
+          <ul>
+            <li style="--color: #00ade1">
+              <a href="#" data-text="&nbsp;Home">&nbsp;Home</a>
+            </li>
+            <li style="--color: #ff6493">
+              <a href="#" data-text="&nbsp;About">&nbsp;About</a>
+            </li>
+            <li style="--color: #ffdd1c">
+              <a href="#" data-text="&nbsp;Services">&nbsp;Services</a>
+            </li>
+            <li style="--color: #00dc82">
+              <a href="#" data-text="&nbsp;Team">&nbsp;Team</a>
+            </li>
+            <li style="--color: #dc00d4">
+              <a href="#" data-text="&nbsp;Contact">&nbsp;Contact</a>
+            </li>
+          </ul>
+        </div>        
+         
+
+
+
+    </div>
+
+    
   </body>
 </html>
