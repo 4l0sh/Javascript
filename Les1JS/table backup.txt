@@ -1,0 +1,214 @@
+<table id="Table" bgcolor="grey">
+        <tr>
+          <th>Part 1</th>
+          <th bgcolor="lightgrey">score</th>
+          <th bgcolor="lightgrey">game 1</th>
+          <th bgcolor="lightgrey">game 2</th>
+          <th bgcolor="lightgrey">game 3</th>
+          <th bgcolor="lightgrey">game 4</th>
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">aces</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+         
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Two's</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Three's</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+        
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Fours</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          
+          
+        </tr>
+
+        <tr>
+          <th bgcolor="white">Fives</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+
+
+        </tr>
+        <th bgcolor="white">Six's</th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+          <th bgcolor="lightgrey">
+            <input type="number" name="score" id="scoreAces" width="20px" />
+          </th>
+      </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+css
+
+
+#scoreAces {
+  width: 40px;
+  border-radius: 5px;
+}
+#acesTable {
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+#Table {
+  grid-column: 15/19;
+  grid-row: 2/7;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+#tableBorder{
+  border: 1px;
+  border-radius: 5px;
+}
+
+
+input {
+  width: 85%;
+  height: 100%;
+  border-radius: 5px;
+}
+table {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.player-1 {
+  grid-row: 2/5;
+  grid-column: 16/21;
+}
+
+.player-2 {
+  grid-row: 2/4;
+  grid-column: 1/3;
+  scale: 1.3;
+  margin-left: 15px;
+}
+th {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(25, 0, 255, 0.25);
+  border-radius: 10px;
+}
+tr {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(25, 0, 255, 0.25);
+  border-radius: 10px;
+}
+

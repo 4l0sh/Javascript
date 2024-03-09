@@ -64,10 +64,138 @@ function rollDice() {
   }*/
 
 
-  let dValues = DOCUMENT.getElementById('dValues');
-  dValues =  dicesValue;
-   
-} 
+// alle enen in de array zettern 
+const ones = dicesValue.filter(isOne);
+console.log(ones);
+var onesArray = ones.length;
+console.log(onesArray);
+
+// Get all elements with the class name 'onesID'
+var onesID = document.querySelectorAll('.onesID');
+
+// de enen knopen bijwerken
+onesID.forEach(button => {
+    button.innerHTML = onesArray;
+});
+
+                  
+  
+  
+  const twos = dicesValue.filter(isTwo)
+  console.log(twos);
+
+  var twosArray = twos.length;
+  console.log(twosArray);
+
+  var twosID = document.querySelectorAll(".twosID");
+  twosID.forEach(button => {
+    button.innerHTML = twosArray;
+  });
+  
+
+
+
+  const threes = dicesValue.filter(isThree)
+  console.log(threes);
+  var threesArray = threes.length;
+  console.log(threesArray);
+
+  var threesID = document.querySelectorAll(".threesID");
+  threesID.forEach(button => {
+    button.innerHTML = threesArray;
+  });
+
+
+
+
+  const fours = dicesValue.filter(isFour)
+  console.log(fours);
+  var foursArray = fours.length;
+  console.log(threesArray);
+
+  var foursID = document.querySelectorAll(".foursID");
+  foursID.forEach(button => {
+    button.innerHTML = foursArray;
+  });
+
+
+
+  const fives = dicesValue.filter(isFive)
+  console.log(fours);
+  var fivesArray = fives.length;
+  console.log(fivesArray);
+
+  var fivesID = document.querySelectorAll(".fivesID");
+  fivesID.forEach(button => {
+    button.innerHTML = fivesArray;
+  });
+
+
+
+  const sixs = dicesValue.filter(isSix)
+  console.log(fours);
+  var sixsArray = sixs.length;
+  console.log(sixsArray);
+
+  var sixsID = document.querySelectorAll(".sixsID");
+  sixsID.forEach(button => {
+    button.innerHTML = sixsArray;
+  });
+
+
+
+   die1.innerHTML = document.getElementById("diceFaces");
+let img = document.getElementById("img");
+img.src = "dice " + die1.innerHTML + ".png";
+document.body.appendChild(img);
+console.log("added image of " + die1.innerHTML);
+
+  img.onclick = function() {
+      console.log(diceFaces.value);
+  }; 
+}
+
+function isOne(value){
+      return value == 1;
+      
+  }
+
+function isTwo(value){
+  return value == 2;
+      
+}
+
+function isThree(value){
+  return value == 3;
+      
+}
+
+function isFour(value){
+  return value == 4;
+      
+}
+
+function isFive(value){
+  return value == 5;
+      
+}
+
+function isSix(value){
+  return value == 6;
+      
+}
+
+
+
+  
+  
+
+
+
+
+
+
+
 const dicesValue = [];
 
 function holdDie(dieNum, ali) {
@@ -106,3 +234,5 @@ title.addEventListener("animationend", () => {
     // Play sound when animation ends
     animationSound.play();
 });
+
+
