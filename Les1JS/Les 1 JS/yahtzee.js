@@ -15,7 +15,7 @@ function rollDice() {
   if (!heldDice[1])  die2.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
   if (!heldDice[2])  die3.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
   if (!heldDice[3])  die4.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
-  if (!heldDice[4])  die5.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[4])  die5.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
   
 
   //if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
@@ -23,29 +23,25 @@ function rollDice() {
   //if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
   //if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
   //if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
-// Update the table with the dice values
-document.getElementById("dice1Value").textContent = die1.value;
-document.getElementById("dice2Value").textContent = die2.value;
-document.getElementById("dice3Value").textContent = die3.value;
-document.getElementById("dice4Value").textContent = die4.value;
-document.getElementById("dice5Value").textContent = die5.value;
+
   var totaal =
-    parseInt(die1.vueal) +
-    parseInt(die2.value) +
-    parseInt(die3.value) +
-    parseInt(die4.value) +
-    parseInt(die5.value);
-  total.innerHTML = totaal;
+    parseInt(die1) +
+    parseInt(die2) +
+    parseInt(die3) +
+    parseInt(die4) +
+    parseInt(die5);
+  total = totaal;
+
 
   if (
-    die1.value == die2.innerHTML &&
-    die1.value == die3.innerHTML &&
-    die1.value == die4.innerHTML &&
-    die1.value == die5.innerHTML
+    die1== die2 &&
+    die1== die3 &&
+    die1== die4 &&
+    die1== die5
   ) {
-    yat.value = "Yahtzee!";
+    yat = "Yahtzee!";
   } else {
-    yat.value = "No Yahtzee";
+    yat = "No Yahtzee";
   }
 
   if (remainingTurns <= 0) {
@@ -60,7 +56,7 @@ document.getElementById("dice5Value").textContent = die5.value;
 
 
     dicesValue.length = 0;
-    dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
+    dicesValue.push(die1.src, die2.src, die3.src, die4.src, die5.src);
 
    /*if (remainingTurns == 2) {
     dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
@@ -202,13 +198,6 @@ function isSix(value){
 
 
 
-  
-  
-
-
-
-
-
 
 
 const dicesValue = [];
@@ -249,5 +238,3 @@ title.addEventListener("animationend", () => {
     // Play sound when animation ends
     animationSound.play();
 });
-
-
