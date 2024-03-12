@@ -3,24 +3,35 @@
   <head>
     <title>Yahtzee</title>
     <link rel="stylesheet" href="yahtzee.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
     <script src="yahtzee.js"></script>
     <audio id="animationSound" src="Bruh - Sound Effect (HD).mp3"></audio>
   </head>
 
   <body>
     <div class="gridLayout">
+
+      
       <p id="title" onmouseover="playHoverSound()">Yahtzee!</p>
        <div class="container">
        <a onclick="rollDice()" href="#" style="--clr:#0905fc; --i:0">
         <span>Roll</span>
       </a></div> 
-      <button onClick="window.location.reload()">Change Player</button>
 
-      <button onclick="holdDie(1,this)" id="dice1" class="dices">0</button>
-      <button onclick="holdDie(2,this)" id="dice2" class="dices">0</button>
-      <button onclick="holdDie(3,this)" id="dice3" class="dices">0</button>
-      <button onclick="holdDie(4,this)" id="dice4" class="dices">0</button>
-      <button onclick="holdDie(5,this)" id="dice5" class="dices">0</button>
+      <div class="container">
+      <a id="changePlayer" onClick="window.location.reload()" href="#" style="--clr:#0905fc; --i:0">
+        <span>Change Player</span></a>
+      </div>
+
+      <!-- <button onclick="holdDie(1,this)" id="dice1" class="dices">0</button> -->
+       <img onclick="holdDie(1,this)" id="dice1" src="dice 1.png">
+        <img onclick="holdDie(2,this)" id="dice2" src="dice 1.png">
+        <img onclick="holdDie(3,this)" id="dice3" src="dice 1.png">
+        <img onclick="holdDie(4,this)" id="dice4" src="dice 1.png">
+        <img onclick="holdDie(5,this)" id="dice5" src="dice 1.png">
+      
 
       <br /><br />
       <h2 id="totalText">Total</h2>
@@ -31,7 +42,7 @@
       
 
       <div class="player-1">
-        <table>
+        <table >
           <tr>
             <th>Player 1</th>
             <th>game 1</th>
@@ -43,50 +54,50 @@
           <tr>
             <td>one's</td>
             <td ><button class="onesID" onclick="isOne()" ></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="onesID" onclick="isOne()" ></button></td>
+            <td><button class="onesID" onclick="isOne()" ></button></td>
+            <td><button class="onesID" onclick="isOne()" ></button></td>
+            <td><button class="onesID" onclick="isOne()" ></button></td>
           </tr>
           <tr>
             <td>two's</td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
           </tr>
           <tr>
             <td>three's</td>
             <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
           </tr>
           <tr>
             <td>four's</td>
             <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
           </tr>
           <tr>
             <td>five's</td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
           </tr>
           <tr>
             <td>six's</td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
           </tr>
         </table>
         </div>
@@ -103,53 +114,75 @@
           <tr>
             <td>one's</td>
             <td><button class="onesID" onclick="isOne()" ></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="onesID" onclick="isOne()"></button></td>
+            <td><button class="onesID" onclick="isOne()"></BUTTon></td>
+            <td><button class="onesID" onclick="isOne()"></button></td>
+            <td><button class="onesID" onclick="isOne()"></button></td>
           </tr>
           <tr>
             <td>two's</td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button class="twosID" onclick="isTwo()"></button></td>
           </tr>
           <tr>
             <td>three's</td>
             <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button class="threesID" onclick="isThree()"></button></td>
           </tr>
           <tr>
             <td>four's</td>
             <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button class="foursID" onclick="isFour()"></button></td>
           </tr>
           <tr>
             <td>five's</td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button class="fivesID" onclick="isFive()"></button></td>
           </tr>
           <tr>
             <td>six's</td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button class="sixsID" onclick="isSix()"></button></td>
           </tr>
         </table>
+        
         </div>
+        <img id="img">
+        
+        <div class="part2">
+          <table>
+            <tr class="p1">
+              <th class="p1">Player 1</th>
+              <th class="p1">Game 1</th>
+              <th class="p1">Game 2</th>
+              <th class="p1">Game 3</th>
+              <th class="p1">Game 4</th>
+              <th class="p1">Game 5</th>
+            </tr>
+            <tr>
+              <td>Three Of A Kind</td>
+            </tr>
+          </table>
+        </div>
+
+
+
+        
 
 
     </div>

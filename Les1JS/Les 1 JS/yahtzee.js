@@ -11,29 +11,36 @@ function rollDice() {
   var total = document.getElementById("total");
   var yat = document.getElementById("yahtzee");
 
-  if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[1]) die2.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if (!heldDice[0])  die1.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[1])  die2.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[2])  die3.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[3])  die4.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[4])  die5.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  
+
+  //if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
+  //if (!heldDice[1]) die2.innerHTML = Math.floor(Math.random() * 6) + 1;
+  //if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
+  //if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
+  //if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
 
   var totaal =
-    parseInt(die1.innerHTML) +
-    parseInt(die2.innerHTML) +
-    parseInt(die3.innerHTML) +
-    parseInt(die4.innerHTML) +
-    parseInt(die5.innerHTML);
+    parseInt(die1.vueal) +
+    parseInt(die2.value) +
+    parseInt(die3.value) +
+    parseInt(die4.value) +
+    parseInt(die5.value);
   total.innerHTML = totaal;
 
   if (
-    die1.innerHTML == die2.innerHTML &&
-    die1.innerHTML == die3.innerHTML &&
-    die1.innerHTML == die4.innerHTML &&
-    die1.innerHTML == die5.innerHTML
+    die1.value == die2.innerHTML &&
+    die1.value == die3.innerHTML &&
+    die1.value == die4.innerHTML &&
+    die1.value == die5.innerHTML
   ) {
-    yat.innerHTML = "Yahtzee!";
+    yat.value = "Yahtzee!";
   } else {
-    yat.innerHTML = "No Yahtzee";
+    yat.value = "No Yahtzee";
   }
 
   if (remainingTurns <= 0) {
@@ -145,14 +152,17 @@ onesID.forEach(button => {
 
 
    die1.innerHTML = document.getElementById("diceFaces");
-let img = document.getElementById("img");
-img.src = "dice " + die1.innerHTML + ".png";
-document.body.appendChild(img);
+   
+let img = document.getElementById("Dice1");
+img.src = "dice " + dicesValue[0] + ".png";
+//document.body.appendChild(img);
 console.log("added image of " + die1.innerHTML);
 
   img.onclick = function() {
       console.log(diceFaces.value);
   }; 
+
+  
 }
 
 function isOne(value){
