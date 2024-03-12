@@ -23,7 +23,12 @@ function rollDice() {
   //if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
   //if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
   //if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
-
+// Update the table with the dice values
+document.getElementById("dice1Value").textContent = die1.value;
+document.getElementById("dice2Value").textContent = die2.value;
+document.getElementById("dice3Value").textContent = die3.value;
+document.getElementById("dice4Value").textContent = die4.value;
+document.getElementById("dice5Value").textContent = die5.value;
   var totaal =
     parseInt(die1.vueal) +
     parseInt(die2.value) +
