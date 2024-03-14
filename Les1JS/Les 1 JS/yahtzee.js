@@ -1,36 +1,44 @@
 let remainingTurns = 3;
 
 var heldDice = [false, false, false, false, false];
-
+const dicesValue = [die1,die2,die3,die4,die5];
 function rollDice() {
-  var die1 = document.getElementById("dice1");
-  var die2 = document.getElementById("dice2");
-  var die3 = document.getElementById("dice3");
-  var die4 = document.getElementById("dice4");
-  var die5 = document.getElementById("dice5");
-  var total = document.getElementById("total");
-  var yat = document.getElementById("yahtzee");
+  // var die1 = document.getElementById("dice1");
+  // var die2 = document.getElementById("dice2");
+  // var die3 = document.getElementById("dice3");
+  // var die4 = document.getElementById("dice4");
+  // var die5 = document.getElementById("dice5");
 
-  if (!heldDice[0])  die1.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
-  if (!heldDice[1])  die2.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
-  if (!heldDice[2])  die3.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
-  if (!heldDice[3])  die4.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
-  if (!heldDice[4])  die5.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+
+  // if (!heldDice[0])  die1.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  // if (!heldDice[1])  die2.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  // if (!heldDice[2])  die3.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  // if (!heldDice[3])  die4.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  // if (!heldDice[4])  die5.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice [0])var die1 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [1])var die2 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [2])var die3 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [3])var die4 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice[4])var die5 = Math.floor(Math.random() * 6) +1;
+
+
+  document.getElementById("dice1").src = `dice ${die1}.png`;
+  document.getElementById("dice2").src = `dice ${die2}.png`;
+  document.getElementById("dice3").src = `dice ${die3}.png`;
+  document.getElementById("dice4").src = `dice ${die4}.png`;
+  var i = document.getElementById("dice5").src = `dice ${die5}.png`;
+  
   
 
-  //if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
-  //if (!heldDice[1]) die2.innerHTML = Math.floor(Math.random() * 6) + 1;
-  //if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
-  //if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
-  //if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
-
+    var total = document.getElementById("total");
+  var yat = document.getElementById("yahtzee");
   var totaal =
-    parseInt(die1) +
-    parseInt(die2) +
-    parseInt(die3) +
-    parseInt(die4) +
+    parseInt(die1)+
+    parseInt(die2)+
+    parseInt(die3)+
+    parseInt(die4)+
     parseInt(die5);
-  total = totaal;
+      total = totaal;
 
 
   if (
@@ -55,8 +63,8 @@ function rollDice() {
     "You have " + remainingTurns + " rolls";
 
 
-    dicesValue.length = 0;
-    dicesValue.push(die1.src, die2.src, die3.src, die4.src, die5.src);
+    // dicesValue.length = 0;
+    // dicesValue.push(die1.src, die2.src, die3.src, die4.src, die5.src);
 
    /*if (remainingTurns == 2) {
     dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
@@ -73,6 +81,7 @@ function rollDice() {
 
 
 // alle enen in de array zettern 
+const dicesValue = [die1,die2,die3,die4,die5];
 const ones = dicesValue.filter(isOne);
 console.log(ones);
 var onesArray = ones.length;
@@ -200,7 +209,7 @@ function isSix(value){
 
 
 
-const dicesValue = [];
+// const dicesValue = [die1,die2,die3,die4,die5];
 
 function holdDie(dieNum, ali) {
   heldDice[dieNum - 1] = !heldDice[dieNum - 1];
@@ -238,3 +247,38 @@ title.addEventListener("animationend", () => {
     // Play sound when animation ends
     animationSound.play();
 });
+
+
+
+
+function fourOfaKind() {
+  // Get the values of the dice
+  var diceValues = [dice1.value, dice2.value, dice3.value, dice4.value, dice5.value];
+  
+  // Filter the dice values to get the unique values and their counts
+  var valueCounts = diceValues.filter((value, index, self) => {
+    return self.indexOf(value) ===  index;
+  }).map(value => {
+    return {value: value, count: diceValues.filter(v => v === value).length};
+  });
+
+  // Check if there are four of a kind
+  for (var i = 0; i < valueCounts.length; i++) {
+    if (valueCounts[i].count === 4) {
+      // Four of a kind found, add score to player's total
+      addScore('fourOfAKind', 4 * parseInt(valueCounts[i].value));
+      return;
+    }
+  }
+
+  // If the function reaches here, it means there are no four of a kind
+  alert('No four of a kind');
+}
+
+function addScore(category, score) {
+  // Get the current score for the category
+  var currentScore = parseInt(document.getElementsByClassName(category)[0].innerHTML);
+
+  // Update the score
+  document.getElementsByClassName(category)[0].innerHTML = currentScore + score;
+}
