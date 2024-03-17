@@ -21,12 +21,12 @@
       </a></div> 
 
       <div class="container">
-      <a id="changePlayer" onClick="window.location.reload()" href="#" style="--clr:#0905fc; --i:0">
+      <a id="changePlayer" onclick="changePlayer()" href="#" style="--clr:#0905fc; --i:0">
         <span>Change Player</span></a>
       </div>
 
       <!-- <button onclick="holdDie(1,this)" id="dice1" class="dices">0</button> -->
-       <img onclick="holdDie(1,this)" id="dice1" src="dice 1.png">
+        <img onclick="holdDie(1,this)" id="dice1" src="dice 1.png">
         <img onclick="holdDie(2,this)" id="dice2" src="dice 1.png">
         <img onclick="holdDie(3,this)" id="dice3" src="dice 1.png">
         <img onclick="holdDie(4,this)" id="dice4" src="dice 1.png">
@@ -54,15 +54,15 @@
           </tr>
           <tr>
             <td>one's</td>
-            <td ><button class="onesID" onclick="isOne()" ></button></td>
-            <td><button class="onesID" onclick="isOne()" ></button></td>
-            <td><button class="onesID" onclick="isOne()" ></button></td>
-            <td><button class="onesID" onclick="isOne()" ></button></td>
-            <td><button class="onesID" onclick="isOne()" ></button></td>
+            <td ><button id="onesPlayer1" onclick="selectOnesPlayer1()" ></button></td>
+            <td><button onclick="selectOnes()" ></button></td>
+            <td><button onclick="selectOnes()" ></button></td>
+            <td><button onclick="selectOnes()" ></button></td>
+            <td><button onclick="selectOnes()" ></button></td>
           </tr>
           <tr>
             <td>two's</td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button id="twosPlayer1" onclick="selectTwosPlayer1()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
@@ -70,7 +70,7 @@
           </tr>
           <tr>
             <td>three's</td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button id="threesPlayer1" onclick="selectThreesPlayer1()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
@@ -78,7 +78,7 @@
           </tr>
           <tr>
             <td>four's</td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button id="foursPlayer1" onclick="selectFoursPlayer1()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
@@ -86,7 +86,7 @@
           </tr>
           <tr>
             <td>five's</td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button id="fivesPlayer1" onclick="selectFivesPlayer1()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
@@ -94,7 +94,7 @@
           </tr>
           <tr>
             <td>six's</td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button id="sixsPlayer1" onclick="selectSixsPlayer1()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
@@ -114,7 +114,7 @@
           </tr>
           <tr>
             <td>one's</td>
-            <td><button class="onesID" onclick="isOne()" ></button></td>
+            <td><button id="onesPlayer2" onclick="selectOnesPlayer2()" ></button></td>
             <td><button class="onesID" onclick="isOne()"></button></td>
             <td><button class="onesID" onclick="isOne()"></BUTTon></td>
             <td><button class="onesID" onclick="isOne()"></button></td>
@@ -122,7 +122,7 @@
           </tr>
           <tr>
             <td>two's</td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
+            <td><button id="twosPlayer2" onclick="selectTwosPlayer2()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
@@ -130,7 +130,7 @@
           </tr>
           <tr>
             <td>three's</td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
+            <td><button id="threesPlayer2" onclick="selectThreesPlayer2()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
@@ -138,7 +138,7 @@
           </tr>
           <tr>
             <td>four's</td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
+            <td><button id="foursPlayer2" onclick="selectFoursPlayer2()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
@@ -146,7 +146,7 @@
           </tr>
           <tr>
             <td>five's</td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
+            <td><button id="fivesPlayer2" onclick="selectFivesPlayer2()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
@@ -154,7 +154,7 @@
           </tr>
           <tr>
             <td>six's</td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
+            <td><button id="sixsPlayer2" onclick="selectSixsPlayer2()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>

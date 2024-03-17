@@ -1,34 +1,194 @@
 <!DOCTYPE html>
-<head>
-
-</head>
-<body>
-
-    <h1 id="lara" onclick="alisina()">Lara</h1>
-    <h1 id="ali" onclick="rondik()">timur</h1>
+<HTML>
+    <HEAD>
+        <TITle> yahtzee</TITle>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+    </HEAD>
     
-    
-    <style>
+    <body>
+        <div class="grid">
+            <button id="roll" onclick="rollen()"> Rollen</button>
         
+        <img class="dices" id="dice1" src="dice1.png" alt="Dice 1">
+        <img class="dices" id="dice2" src="dice1.png" alt="Dice 1">
+        <img class="dices" id="dice3" src="dice1.png" alt="Dice 1">
+        <img class="dices" id="dice4" src="dice1.png" alt="Dice 1">
+        <img class="dices" id="dice5" src="dice1.png" alt="Dice 1">    
 
-    </style>
+            <p id="rolls">3</p>
+
+            <div class="table">
+                <table id="table">
+                    <tr>
+                        <th >Game</th>
+                        <th >Player 1</th>
+                        <th >Player 2</th>
+                    </tr>
+                    <tr>
+                        <th > Ones</th>
+                        <th > </th>
+                        <th > </th>
+
+                    </tr>
+                    <tr>
+                        <th >Twos</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Threes</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Fours</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Fives</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Six's</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th > sum</th>
+                        <th > </th>
+                        <th > </th>
+
+                    </tr>
+                    <tr>
+                        <th >Bonus</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Three of a Kind</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Full House</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >small straight</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Large Straight</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >chance</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Yahtzee</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    <tr>
+                        <th >Total Score</th>
+                        <th > </th>
+                        <th > </th>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+        
+    </body>
+
+<style>
+
+    html,body{
+        background-image: linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url(dicewallpaper1.jpg) ;
+
+        background-size: 100%;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+        grid-auto-rows: 50px;
+    }
+
+.dices{
+    width: 70%;
+    grid-row: 3;
+}
+
+#roll{
+    color: white;
+    width: 80%;
+    height: 80%;
+    grid-row: 3;
+    grid-column: 10;
+    scale: 1.5;
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    border: 0px;
+    border-radius: 8px;
+    transition: 1s;
+
+}
+#roll:hover{
+    scale: 1;
+    transform: rotate(10deg);
+    background-color: blueviolet;
+    transition: 1s;
+}
+
+#rolls{
+    color: white;
+    grid-column: 10 ;
+    grid-row: 5;
+    font-size: 40px;
+}
+.table{
+    grid-column: 15/19;
+    grid-row: 1/10;
+    align-items: center;
+    color: white;
+    border: 5px solid gre;
+    border-radius: 5px;
+    width: 80%;
+    height: 97%;
+    backdrop-filter: blur(30px);
+
+}
+#tableBorder{
+    border: 1px;
+    border-radius: 5px;
+    
+    
+    
+}
+th{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+</style>
 
 
 <script>
-var lara = document.getElementById( "lara" );
-
-function alisina(){
-    console.log("Hallo");
-}
-function rondik(){
-    console.log("'ok");
-}
-
-
-
-
 
 
 
 </script>
-</body>
+
+
+
+
+
+</HTML>
