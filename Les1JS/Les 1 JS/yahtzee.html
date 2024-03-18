@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
     <script src="yahtzee.js"></script>
     <audio id="animationSound" src="Bruh - Sound Effect (HD).mp3"></audio>
+    <link rel="icon" type="image/x-icon" href="aceFavicon.ico">
   </head>
 
   <body>
@@ -38,8 +39,8 @@
       <h2 id="total"></h2>
       <h2 id="yahtzee"></h2>
       
-      <h2 id="remainingTurns">You have 3 rolls</h2>
-      <h2 id="fourOfaKind"></h2>
+      <h2 id="remainingTurns" >You have 3 rolls</h2>
+     
       
 
       <div class="player-1">
@@ -48,58 +49,80 @@
             <th>Player 1</th>
             <th>game 1</th>
             <th>game 2</th>
-            <th>game 3</th>
-            <th>game 4</th>
-            <th>game 5</th>
+          
           </tr>
           <tr>
             <td>one's</td>
             <td ><button id="onesPlayer1" onclick="selectOnesPlayer1()" ></button></td>
             <td><button onclick="selectOnes()" ></button></td>
-            <td><button onclick="selectOnes()" ></button></td>
-            <td><button onclick="selectOnes()" ></button></td>
-            <td><button onclick="selectOnes()" ></button></td>
+            
           </tr>
           <tr>
             <td>two's</td>
             <td><button id="twosPlayer1" onclick="selectTwosPlayer1()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
+            
           </tr>
           <tr>
             <td>three's</td>
             <td><button id="threesPlayer1" onclick="selectThreesPlayer1()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
+           
           </tr>
           <tr>
             <td>four's</td>
             <td><button id="foursPlayer1" onclick="selectFoursPlayer1()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
+            
           </tr>
           <tr>
             <td>five's</td>
             <td><button id="fivesPlayer1" onclick="selectFivesPlayer1()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
+            
           </tr>
           <tr>
             <td>six's</td>
             <td><button id="sixsPlayer1" onclick="selectSixsPlayer1()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
+           
           </tr>
+          <tr>
+            <td>Three Of A Kind</td>
+            <td><button id="threeOfaKind" onclick="threeOfAKind()"></button></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>Four Of A Kind</td>
+            <td><button id="fourOfaKind" onclick="fourOfAKind()"></button></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <th>Full House</th>
+            <th> <button id="fullHouse" onclick="fullHouse()"></button></th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>Large Straight</th>
+            <th> <button id="largeStraight" onclick="largeStraight()"></button> </th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>Small Straight</th>
+            <th> <button id="smallStraight" onclick="smallStraight()"></button></th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>yahtzee</th>
+            <th> <button id="yat" onclick="yahtzee()"></button> </th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>Total Score</th>
+            <th><button id="totalScore" onclick="totalScore()"> </button></th>
+            <th> </th>
+          </tr>
+          
         </table>
         </div>
         <div class="player-2">
@@ -108,87 +131,83 @@
             <th>Player 2</th>
             <th>game 1</th>
             <th>game 2</th>
-            <th>game 3</th>
-            <th>game 4</th>
-            <th>game 5</th>
+            
           </tr>
           <tr>
             <td>one's</td>
             <td><button id="onesPlayer2" onclick="selectOnesPlayer2()" ></button></td>
             <td><button class="onesID" onclick="isOne()"></button></td>
-            <td><button class="onesID" onclick="isOne()"></BUTTon></td>
-            <td><button class="onesID" onclick="isOne()"></button></td>
-            <td><button class="onesID" onclick="isOne()"></button></td>
+           
           </tr>
           <tr>
             <td>two's</td>
             <td><button id="twosPlayer2" onclick="selectTwosPlayer2()"></button></td>
             <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
-            <td><button class="twosID" onclick="isTwo()"></button></td>
+          
           </tr>
           <tr>
             <td>three's</td>
             <td><button id="threesPlayer2" onclick="selectThreesPlayer2()"></button></td>
             <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
-            <td><button class="threesID" onclick="isThree()"></button></td>
+            
           </tr>
           <tr>
             <td>four's</td>
             <td><button id="foursPlayer2" onclick="selectFoursPlayer2()"></button></td>
             <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
-            <td><button class="foursID" onclick="isFour()"></button></td>
+            
           </tr>
           <tr>
             <td>five's</td>
             <td><button id="fivesPlayer2" onclick="selectFivesPlayer2()"></button></td>
             <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
-            <td><button class="fivesID" onclick="isFive()"></button></td>
+            
           </tr>
           <tr>
             <td>six's</td>
             <td><button id="sixsPlayer2" onclick="selectSixsPlayer2()"></button></td>
             <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
-            <td><button class="sixsID" onclick="isSix()"></button></td>
+    
+          </tr>
+
+          <tr>
+            <td>Three Of A Kind</td>
+            <td><button id="threeOfaKindPlayer2" onclick="threeOfAKindPlayer2()"></button></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>Four Of A Kind</td>
+            <td><button id="fourOfaKindPlayer2" onclick="fourOfAKindPlayer2()"></button></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <th>Full House</th>
+            <th> <button id="fullHousePlayer2" onclick="fullHousePlayer2()"></button></th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>Large Straight</th>
+            <th> <button id="largeStraightPlayer2" onclick="largeStraightPlayer2()"></button> </th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>Small Straight</th>
+            <th> <button id="smallStraightPlayer2" onclick="smallStraightPlayer2()"></button></th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>yahtzee</th>
+            <th> <button id="yatP2" onclick="yahtzeePlayer2()"></button> </th>
+            <th> </th>
+          </tr>
+          <tr>
+            <th>Total Score</th>
+            <th><button id="totalP2" onclick="totalP2()"> </button></th>
+            <th> </th>
           </tr>
         </table>
         
         </div>
-        
-        
-        <div class="part2">
-          <table>
-            <tr class="p1">
-              <th class="p1">Player 1</th>
-              <th class="p1">Game 1</th>
-              <th class="p1">Game 2</th>
-              <th class="p1">Game 3</th>
-              <th class="p1">Game 4</th>
-              <th class="p1">Game 5</th>
-            </tr>
-            <tr>
-              <td>Three Of A Kind</td>
-            </tr>
-            <tr>
-              <td>Four Of A Kind</td>
-              <td><button class="FourOfaKind" onclick="fourOfaKind()"></button></td>
-            </tr>
-          </table>
-        </div>
-
-
-
-        
-
 
     </div>
 
