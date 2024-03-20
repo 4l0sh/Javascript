@@ -182,7 +182,213 @@ th{
 
 
 <script>
+function threeOfAKindPlayer1() {
+  
+  const counts = Array.from({ length: 6 }, () => 0); // Array to count occurrences of each number
+  for (const value of diceValues) {
+    counts[value - 1]++; // Increment count for the corresponding number
+  }
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] == 3) {
+      threeOfAKindTotalPlayer1 = diceValues[0] + diceValues[1] + diceValues[2] + diceValues[3] + diceValues[4];
+      document.getElementById("threeOfaKindPlayer1").textContent = threeOfAKindTotalPlayer1;
+      return true; // Found three of a kind
+    }
+  }
+  document.getElementById("threeOfaKindPlayer1").textContent = "No Three of a Kind";
+  return false; // No three of a kind found
+}
 
+function threeOfAKindPlayer2() {
+  const counts = Array.from({ length: 6 }, () => 0);
+  for (const value of diceValues) {
+    counts[value - 1]++;
+  }
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] == 3) {
+      threeOfAKindTotalPlayer2 = diceValues[0] + diceValues[1] + diceValues[2] + diceValues[3] + diceValues[4];
+      document.getElementById("threeOfaKindPlayer2").textContent = threeOfAKindTotalPlayer2;
+      return true;
+    }
+  }
+  document.getElementById("threeOfaKindPlayer2").textContent = "No Three of a Kind!";
+  return false;
+}
+
+function fourOfAKindPlayer1() {
+  
+  const counts = Array.from({ length: 6 }, () => 0); // Array to count occurrences of each number
+  for (const value of diceValues) {
+    counts[value - 1]++; // Increment count for the corresponding number
+  }
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] == 4) {
+      fourOfAKindTotalPlayer1 = diceValues[0] + diceValues[1] + diceValues[2] + diceValues[3] + diceValues[4];
+      document.getElementById("fourOfaKindPlayer1").textContent = fourOfAKindTotalPlayer1;
+      return true; // Found four of a kind
+    }
+  }
+  document.getElementById("fourOfaKindPlayer1").textContent = " No Four of a Kind!";
+  // document.getElementById("fourOfaKind").textContent = "No Four of a Kind";
+  return false; // No four of a kind found
+}
+function fourOfAKindPlayer2() {
+  const counts = Array.from({ length: 6 }, () => 0);
+  for (const value of diceValues) {
+    counts[value - 1]++;
+  }
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] == 4) {
+      fourOfAKindTotalPlayer2 = diceValues[0] + diceValues[1] + diceValues[2] + diceValues[3] + diceValues[4];
+      document.getElementById("fourOfaKindPlayer2").textContent = fourOfAKindTotalPlayer2;
+      return true;
+    }
+  }
+  document.getElementById("fourOfaKindPlayer2").textContent = " No Four of a Kind!";
+  // document.getElementById("fourOfaKind").textContent = "No Four of a Kind";
+  return false; // No four of a kind found
+}
+
+
+function fullHousePlayer1() {
+  const counts = Array.from({ length: 6 }, () => 0); // Array to count occurrences of each number
+  for (const value of diceValues) {
+    counts[value - 1]++; // Increment count for the corresponding number
+  }
+  let hasThree = false;
+  let hasTwo = false;
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] === 3) {
+      hasThree = true;
+    } else if (counts[i] === 2) {
+      hasTwo = true;
+    }
+  }
+  if (hasThree && hasTwo) {
+    fullHouseTotalPlayer1 = 25;
+    document.getElementById("fullHousePlayer1").textContent = fullHouseTotalPlayer1;
+    return true; // Found a full house
+  } else {
+    document.getElementById("fullHousePlayer1").textContent = "No Full House";
+    return false; // No full house found
+  }
+}
+function fullHousePlayer2() {
+  const counts = Array.from({ length: 6 }, () => 0); // Array to count occurrences of each number
+  for (const value of diceValues) {
+    counts[value - 1]++; // Increment count for the corresponding number
+  }
+  let hasThree = false;
+  let hasTwo = false;
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] === 3) {
+      hasThree = true;
+    } else if (counts[i] === 2) {
+      hasTwo = true;
+    }
+  }
+  if (hasThree && hasTwo) {
+    document.getElementById("fullHousePlayer2").textContent = "Full House!";
+    return true; // Found a full house
+  } else {
+    document.getElementById("fullHousePlayer2").textContent = "No Full House";
+    return false; // No full house found
+  }
+}
+
+
+function largeStraightPlayer1() {
+  const sortedDiceValues = diceValues.slice().sort((a, b) => a - b);
+  for (let i = 0; i < sortedDiceValues.length - 1; i++) {
+    if (sortedDiceValues[i] + 1 !== sortedDiceValues[i + 1]) {
+      largeStraightTotalPlayer1 = 40;
+      document.getElementById("largeStraightPlayer1").textContent = largeStraightTotalPlayer1;
+      return false; // Not a large straight
+    }
+  }
+  document.getElementById("largeStraightPlayer1").textContent = "Large Straight!";
+  return true; // Found a large straight
+}
+function largeStraightPlayer2() {
+  const sortedDiceValues = diceValues.slice().sort((a, b) => a - b);
+  for (let i = 0; i < sortedDiceValues.length - 1; i++) {
+    if (sortedDiceValues[i] + 1 !== sortedDiceValues[i + 1]) {
+      largeStraightTotalPlayer2 = 40;
+      document.getElementById("largeStraightPlayer2").textContent = largeStraightTotalPlayer2;
+      return false; 
+    }
+  }
+  document.getElementById("largeStraightPlayer2").textContent = "Large Straight!";
+  return true; 
+}
+
+function smallStraightPlayer1() {
+  const sortedDiceValues = diceValues.slice().sort((a, b) => a - b);
+  for (let i = 0; i < sortedDiceValues.length - 2; i++) {
+    if (sortedDiceValues[i] + 1 === sortedDiceValues[i + 1] &&
+        sortedDiceValues[i + 1] + 1 === sortedDiceValues[i + 2]) {
+        smallStraightTotalPlayer1 = 30;
+      document.getElementById("smallStraightPlayer1").textContent = smallStraightTotalPlayer1;
+      return true; // Found a small straight
+    }
+  }
+  document.getElementById("smallStraightPlayer1").textContent = "No Small Straight";
+  return false; // Not a small straight
+}
+function smallStraightPlayer2() {
+  const sortedDiceValues = diceValues.slice().sort((a, b) => a - b);
+  for (let i = 0; i < sortedDiceValues.length - 2; i++) {
+    if (sortedDiceValues[i] + 1 === sortedDiceValues[i + 1] &&
+        sortedDiceValues[i + 1] + 1 === sortedDiceValues[i + 2]) {
+          smallStraightTotalPlayer2 = 30;
+          document.getElementById("smallStraightPlayer2").textContent = smallStraightTotalPlayer2;
+      return true; 
+    }
+  }
+  document.getElementById("smallStraightPlayer2").textContent = "No Small Straight";
+  return false; 
+}
+
+function yahtzeePlayer1() {
+  const counts = Array.from({ length: 6 }, () => 0); // Array to count occurrences of each number
+  for (const value of diceValues) {
+    counts[value - 1]++; // Increment count for the corresponding number
+  }
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] === 5) {
+      yahtzeeScorePlayer1 = 50;
+      document.getElementById("yahtzeePlayer1").textContent = yahtzeeScorePlayer1;
+      return true; 
+    }
+  }
+  document.getElementById("yahtzeePlayer1").textContent = "No Yahtzee";
+  return false; 
+}
+function yahtzeePlayer2() {
+  const counts = Array.from({ length: 6 }, () => 0); 
+  for (const value of diceValues) {
+    counts[value - 1]++; 
+  }
+  for (let i = 0; i < 6; i++) {
+    if (counts[i] === 5) {
+      yahtzeeScorePlayer2 = 50;
+      document.getElementById("yahtzeePlayer2").textContent = yahtzeeScorePlayer2;
+      return true; 
+    }
+  }
+  document.getElementById("yahtzeePlayer2").textContent = "No Yahtzee";
+  return false; 
+}
+
+function totalPlayer1(){
+  totalScorePlayer1 = (onesCountPlayer1 * 1) + (twosCountPlayer1 * 2) + (threesCountPlayer1 * 3) + (foursCountPlayer1 * 4) + (fivesCountPlayer1 * 5) + (sixesCountPlayer1 * 6 + threeOfAKindTotalPlayer1 + fourOfAKindTotalPlayer1 + yahtzeeScorePlayer1 + fullHouseTotalPlayer1 + smallStraightTotalPlayer1 + largeStraightTotalPlayer1);
+  document.getElementById("totalPlayer1").textContent = totalScorePlayer1;
+}
+
+function totalPlayer2(){
+  totalScorePlayer2 = (onesCountPlayer2 * 1) + (twosCountPlayer2 * 2) + (threesCountPlayer2 * 3) + (foursCountPlayer2 * 4) + (fivesCountPlayer2 * 5) + (sixesCountPlayer2 * 6 + threeOfAKindTotalPlayer2 + fourOfAKindTotalPlayer2 + yahtzeeScorePlayer2 + fullHouseTotalPlayer2 + smallStraightTotalPlayer2 + largeStraightTotalPlayer2);
+  document.getElementById("totalPlayer2").textContent = totalScorePlayer2;
+}
 
 
 </script>

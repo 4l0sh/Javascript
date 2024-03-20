@@ -1,0 +1,1 @@
+ INSERT INTO student(studentnr, roepnaam, adres, postcode, woonplaats, geslacht, telefoon, geboortedatum,  schoolgeld, betaald)VALUES (6666,"Angelique","Hoedenstraat 12", "1663 LW", "Lelystad" ,"V", "0320654378", "1998-06-06", "200", "100");

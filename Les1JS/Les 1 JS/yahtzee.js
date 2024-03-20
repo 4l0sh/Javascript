@@ -1,9 +1,6 @@
 let remainingTurns = 3;
 let heldDice = [false, false, false, false, false];
-
-// Store the dice values in an array
 let diceValues = [0, 0, 0, 0, 0];
-
 let onesCountPlayer1=0;
 let onesCountPlayer2=0;
 let twosCountPlayer1=0;
@@ -44,7 +41,7 @@ function rollDice() {
     }
   }
 
-  // Update the dice images
+  // Update die images
   for (let i = 0; i < diceValues.length; i++) {
     document.getElementById("dice" + (i + 1)).src = "dice " + diceValues[i] + ".png";
   }
@@ -52,8 +49,8 @@ function rollDice() {
   remainingTurns--;
   document.getElementById("remainingTurns").textContent = "You have " + remainingTurns + " rolls";
 
-  // Update other functionalities based on the new dice values
-  updateScore(); // Assuming you have a function to update the score based on diceValues
+  
+  updateScore(); 
 }
 
 function holdDie(dieNum) {
@@ -65,7 +62,7 @@ function updateScore() {
   let totalScore = 0;
   for (let i = 0; i < diceValues.length; i++) {
     totalScore += diceValues[i];
-  }
+  }z
   document.getElementById("total").textContent =  totalScore;
 }
 
@@ -340,7 +337,7 @@ function yahtzeePlayer2() {
       return true; 
     }
   }
-  document.getElementById("yahtzeePlayer2").textContent = "No Yahtzee";
+  document.getElementById("yatP2").textContent = "No Yahtzee";
   return false; 
 }
 function totalP2(){
@@ -389,7 +386,7 @@ title.addEventListener("animationend", () => {
 });
 
 function totalScore() {
-  totalPlayer1 = (onesCountPlayer1 * 1) + (twosCountPlayer1 * 2) + (threesCountPlayer1 * 3) + (foursCountPlayer1 * 4) + (fivesCountPlayer1 * 5) + (sixesCountPlayer1 * 6) + fourOfaKindTotP1 +yatP1 + fullHouseP1 + smallStraightP1;
+  totalPlayer1 = (onesCountPlayer1 * 1) + (twosCountPlayer1 * 2) + (threesCountPlayer1 * 3) + (foursCountPlayer1 * 4) + (fivesCountPlayer1 * 5) + (sixesCountPlayer1 * 6) + threeOfaKindTotP1+ fourOfaKindTotP1 +yatP1 + fullHouseP1 + smallStraightP1;
 
   document.getElementById("totalScore").textContent =totalPlayer1;
 
